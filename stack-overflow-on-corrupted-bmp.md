@@ -1,6 +1,7 @@
 <!--- @file
-  EDK II  Authenticated Variable Bypass.md for Security Advisory
-  Copyright (c) 2018, Intel Corporation. All rights reserved.<BR>
+  Security Advisory for issue "Stack Overflow on Corrupted BMP"
+
+  Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -28,25 +29,37 @@
 
 -->
 
-# 30. EDK II Authenticated Variable Bypass {#edk-ii-authenticated-variable-bypass}
-
+# 35. Stack Overflow on Corrupted BMP{#stack-overflow-on-corrupted-bmp}
 
 ## Description:
-Logic error in MdeModulePkg in EDK II firmware may allow authenticated user to potentially bypass configuration access controls and escalate privileges via local access. 
-## Impact
-Elevation of Privilege
-## Severity
-Medium 6.7 CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+
+Stack overflow in corrupted bmp for EDK II may allow unprivileged user to potentially enable denial of service or elevation of privilege via local access. 
+
+## Impact:
+
+Denial of Service or Elevation of Privilege
+
+## Severity:
+7.4 high CVSS:3.0/AV:L/AC:L/PR:H/UI:R/S:C/C:N/I:H/A:H
+
 ## Recommendation:
-This address the following issue in Tianocore Bugzilla: <br>https://bugzilla.tianocore.org/show_bug.cgi?id=415
 
+EDK II Commits:
 
+- https://github.com/tianocore/edk2/commit/89910a39dcfd788057caa5d88b7e76e112d187b5
 
-Patch to update firmware is:<br>https://bugzilla.tianocore.org/attachment.cgi?id=44 
+- https://github.com/tianocore/edk2/commit/ffe5f7a6b4e978dffbe1df228963adc914451106
+
+Patch:
+
+- https://bugzilla.tianocore.org/attachment.cgi?id=212
 
 ## Acknowledgments:
-This issue was discovered by Intel.
+
+Intel Team
+
+
 ## References:
-CVE-2018-3613
+CVE-2018-12181
 
-
+EDK II Bugzilla [#1135](https://bugzilla.tianocore.org/show_bug.cgi?id=1135)

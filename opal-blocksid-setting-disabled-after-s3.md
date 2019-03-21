@@ -1,6 +1,7 @@
 <!--- @file
-  EDK II  Authenticated Variable Bypass.md for Security Advisory
-  Copyright (c) 2018, Intel Corporation. All rights reserved.<BR>
+  Security Advisory of  "Opal BlockSid Setting Disabled after S3"
+
+  Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -28,25 +29,31 @@
 
 -->
 
-# 30. EDK II Authenticated Variable Bypass {#edk-ii-authenticated-variable-bypass}
-
+# 33. Opal BlockSid Setting Disabled after S3 {#opal-blocksid-setting-disabled-after-s3}
 
 ## Description:
-Logic error in MdeModulePkg in EDK II firmware may allow authenticated user to potentially bypass configuration access controls and escalate privileges via local access. 
+
+Improper configuration in system firmware for EDK II may allow unauthenticated user to potentially enable escalation of privilege, information disclosure and/or denial of service via local access. 
+
 ## Impact
-Elevation of Privilege
+
+Escalation of Privilege, Information Disclosure and/or Denial of Service
+
 ## Severity
-Medium 6.7 CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+7.8 (High) - CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+
 ## Recommendation:
-This address the following issue in Tianocore Bugzilla: <br>https://bugzilla.tianocore.org/show_bug.cgi?id=415
 
+Patch:
 
-
-Patch to update firmware is:<br>https://bugzilla.tianocore.org/attachment.cgi?id=44 
+- https://bugzilla.tianocore.org/attachment.cgi?id=210
 
 ## Acknowledgments:
-This issue was discovered by Intel.
+
+Intel Team
+
+
 ## References:
-CVE-2018-3613
+CVE-2018-12179
 
-
+EDK II Bugzilla [#1133](https://bugzilla.tianocore.org/show_bug.cgi?id=1133)

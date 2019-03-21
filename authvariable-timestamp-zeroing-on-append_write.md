@@ -1,6 +1,6 @@
 <!--- @file
-  EDK II  Authenticated Variable Bypass.md for Security Advisory
-  Copyright (c) 2018, Intel Corporation. All rights reserved.<BR>
+  Security Advisory for issue "AuthVariable Timestamp Zeroing on APPEND_WRITE"
+  Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -28,25 +28,36 @@
 
 -->
 
-# 30. EDK II Authenticated Variable Bypass {#edk-ii-authenticated-variable-bypass}
-
+# 40. AuthVariable Timestamp Zeroing on APPEND_WRITE{#authvariable-timestamp-zeroing-on-append_write}
 
 ## Description:
-Logic error in MdeModulePkg in EDK II firmware may allow authenticated user to potentially bypass configuration access controls and escalate privileges via local access. 
-## Impact
-Elevation of Privilege
-## Severity
+
+Logic issue in variable service module for EDK II/UDK2018/UDK2017/UDK2015 may allow an authenticated user to potentially
+enable escalation of privilege, information disclosure and/or denial of service via local access. 
+
+## Impact:
+
+Escalation of Privilege, Information Disclosure and/or Denial of Service
+
+## Severity:
 Medium 6.7 CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
 ## Recommendation:
-This address the following issue in Tianocore Bugzilla: <br>https://bugzilla.tianocore.org/show_bug.cgi?id=415
 
+EDK II commits:
 
-
-Patch to update firmware is:<br>https://bugzilla.tianocore.org/attachment.cgi?id=44 
+- [master] https://github.com/tianocore/edk2/commit/b7dc8888f31402f410c53242839271ba3b94b619
+- [UDK2018] https://github.com/tianocore/edk2/commits/348d9f7a078cf8893a803bc4e90abefb3126344a
+- [UDK2017] https://github.com/tianocore/edk2/commits/5c693e581e6ab2c8e9daac170616d867272399d9
+- [UDK2015] https://github.com/tianocore/edk2/commits/2bfddc064b1cd1f4539350bff1473a9c371865d8
 
 ## Acknowledgments:
-This issue was discovered by Intel.
+
+Intel Team
+
+
 ## References:
 CVE-2018-3613
+
+EDK II Bugzilla [#415](https://bugzilla.tianocore.org/show_bug.cgi?id=415)
 
 

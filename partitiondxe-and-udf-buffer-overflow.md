@@ -1,6 +1,7 @@
 <!--- @file
-  EDK II  Authenticated Variable Bypass.md for Security Advisory
-  Copyright (c) 2018, Intel Corporation. All rights reserved.<BR>
+  Security Advisory for issue "PartitionDxe and Udf Buffer Overflow"
+
+  Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -28,25 +29,42 @@
 
 -->
 
-# 30. EDK II Authenticated Variable Bypass {#edk-ii-authenticated-variable-bypass}
-
+# 34. PartitionDxe and Udf Buffer Overflow{#partitiondxe-and-udf-buffer-overflow}
 
 ## Description:
-Logic error in MdeModulePkg in EDK II firmware may allow authenticated user to potentially bypass configuration access controls and escalate privileges via local access. 
+
+Buffer overflow in system firmware for EDK II may allow unauthenticated user to potentially enable escalation of privilege and/or denial of
+service via network access.
+
 ## Impact
-Elevation of Privilege
+
+Escalation of privilege and/or denial of service
+
 ## Severity
-Medium 6.7 CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+8.7 (High) - CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:H
+
 ## Recommendation:
-This address the following issue in Tianocore Bugzilla: <br>https://bugzilla.tianocore.org/show_bug.cgi?id=415
 
+EDK II Commits:
 
+- https://github.com/tianocore/edk2/commit/4df8f5bfa28b8b881e506437e8f08d92c1a00370
+- https://github.com/tianocore/edk2/commit/b9ae1705adfdd43668027a25a2b03c2e81960219
+- https://github.com/tianocore/edk2/commit/5c0748f43f4e1cc15fdd0be64a764eacd7df92f6
+- https://github.com/tianocore/edk2/commit/89f75aa04a97293a8ed9db2a90851a5053730cf5
+- https://github.com/tianocore/edk2/commit/3b30351b75d70ea65701ac999875fbb81a89a5ca
 
-Patch to update firmware is:<br>https://bugzilla.tianocore.org/attachment.cgi?id=44 
+Patch:
+
+- https://bugzilla.tianocore.org/attachment.cgi?id=224
 
 ## Acknowledgments:
-This issue was discovered by Intel.
+
+Intel Team
+
+
 ## References:
-CVE-2018-3613
+CVE-2019-0160
+
+EDK II Bugzilla [#828](https://bugzilla.tianocore.org/show_bug.cgi?id=828)
 
 

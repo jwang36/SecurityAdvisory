@@ -1,6 +1,7 @@
 <!--- @file
-  EDK II  Authenticated Variable Bypass.md for Security Advisory
-  Copyright (c) 2018, Intel Corporation. All rights reserved.<BR>
+  Security Advisory for issue "Buffer Overflow in BlockIo service for RAM disk"
+
+  Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -28,25 +29,39 @@
 
 -->
 
-# 30. EDK II Authenticated Variable Bypass {#edk-ii-authenticated-variable-bypass}
-
+# 36. Buffer Overflow in BlockIo service for RAM disk{#buffer-overflow-in-blockio-service-for-ram-disk}
 
 ## Description:
-Logic error in MdeModulePkg in EDK II firmware may allow authenticated user to potentially bypass configuration access controls and escalate privileges via local access. 
-## Impact
-Elevation of Privilege
-## Severity
-Medium 6.7 CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+
+Buffer overflow in BlockIo service for EDK II may allow an unauthenticated user to potentially enable escalation of privilege, information disclosure and/or denial of
+service via network access. 
+
+## Impact:
+
+Escalation of Privilege, Information Disclosure and/or Denial of service
+
+## Severity:
+7.5 (High) - CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H
+
 ## Recommendation:
-This address the following issue in Tianocore Bugzilla: <br>https://bugzilla.tianocore.org/show_bug.cgi?id=415
 
+EDK II Commits:
 
+- https://github.com/tianocore/edk2/commit/fccdb88022c1f6d85c773fce506b10c879063f1d
+- https://github.com/tianocore/edk2/commit/38c9fbdcaa0219eb86fe82d90e3f8cfb5a54be9f
 
-Patch to update firmware is:<br>https://bugzilla.tianocore.org/attachment.cgi?id=44 
+Patch:
+
+- https://bugzilla.tianocore.org/attachment.cgi?id=233
 
 ## Acknowledgments:
-This issue was discovered by Intel.
+
+Intel Team
+
+
 ## References:
-CVE-2018-3613
+CVE-2018-12180
+
+EDK II Bugzilla [#1134](https://bugzilla.tianocore.org/show_bug.cgi?id=1134)
 
 

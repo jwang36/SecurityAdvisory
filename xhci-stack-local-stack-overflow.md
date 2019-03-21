@@ -1,6 +1,7 @@
 <!--- @file
-  EDK II  Authenticated Variable Bypass.md for Security Advisory
-  Copyright (c) 2018, Intel Corporation. All rights reserved.<BR>
+  Security Advisory for "XHCI stack local stack overflow"
+
+  Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -28,25 +29,33 @@
 
 -->
 
-# 30. EDK II Authenticated Variable Bypass {#edk-ii-authenticated-variable-bypass}
-
+# 37. XHCI stack local stack overflow {#xhci-stack-local-stack-overflow}
 
 ## Description:
-Logic error in MdeModulePkg in EDK II firmware may allow authenticated user to potentially bypass configuration access controls and escalate privileges via local access. 
-## Impact
-Elevation of Privilege
-## Severity
-Medium 6.7 CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+
+Stack overflow in XHCI for EDK II may allow an unauthenticated user to potentially enable denial of service via local access. 
+
+## Impact:
+
+Denial of Service
+
+## Severity:
+Medium 4.0 CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
 ## Recommendation:
-This address the following issue in Tianocore Bugzilla: <br>https://bugzilla.tianocore.org/show_bug.cgi?id=415
 
+EDK II Commits:
 
-
-Patch to update firmware is:<br>https://bugzilla.tianocore.org/attachment.cgi?id=44 
+- https://github.com/tianocore/edk2/commit/acebdf14c985c5c9f50b37ece0b15ada87767359
+- https://github.com/tianocore/edk2/commit/72750e3bf9174f15c17e78f0f117b5e7311bb49f
 
 ## Acknowledgments:
-This issue was discovered by Intel.
+
+Microsoft
+
+
 ## References:
-CVE-2018-3613
+CVE-2019-0161
+
+EDK II Bugzilla [#973](https://bugzilla.tianocore.org/show_bug.cgi?id=973)
 
 

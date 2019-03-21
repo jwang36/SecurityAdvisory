@@ -56,10 +56,10 @@ This document will list briefings on each security issue found and give a descri
 | .003.1       | Logs for 21-26 <BR>-  Fix more for DHCP issue, feedback from Phoenix.<BR>-  Fix Smm Variable GetInfo function issue, discovered by release test.<BR>-  Fix GIT hash info, which incorrect stated before. logs 21, 22, 23, 24, 25, 26                                  |  Dec 19, 2016|
 | | | |
 | .004.0 | Log 27 - Update<BR>Update Gitbook Template | Jan 11, 2018 |
-|.005.0 | Log 28  Update  |July 10, 2018  |  
+|.005.0 | Log 28  Update  |July 10, 2018  |
 | .006.0  | Log 29 Update  | Sept 19, 2018  |
 | .007.0  | Log 30 & 31 Update  | Oct 12, 2018  |
-|   |   |  |
+| .008.0 | Log 32-40  Update | Mar 21, 2019 |
 
 
 
